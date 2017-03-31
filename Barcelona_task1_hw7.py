@@ -72,10 +72,19 @@ def defaultFunction():
     Help Comment
     """
     with urlopen("http://icarus.cs.weber.edu/~hvalle/cs3030/data/minivanTest.csv") as data:
+        for lines in data:
+            temp = []
+            templines = lines.split()
+            for logs in templines:
+                    temp.append(logs.decode("utf-8"))
+            print(temp)
+
+            
+
         #csv_data = csv.reader(data)
-        for row in data:
+        for row in temp:
             print(row)
-            print("Reading Record", row[0t])
+            print("Reading Record", row[0])
             print("Left dashboard switch (0 or 1): ", row[1])
             print("Right dashboard switch (0 or 1): ", row[2])
             print("Child lock switch (0 or 1): ", row[3])
