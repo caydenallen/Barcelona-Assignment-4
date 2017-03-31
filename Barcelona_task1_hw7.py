@@ -21,7 +21,7 @@ def test():
     lOpen = 0
     gsPark = 0
     pattern = re.compile("/[PpNnDd123rR]/g")
-
+    #determin gear shift
     if GS == "p" | GS == "P":
         gsPark = 1
         canOpen = 1
@@ -33,11 +33,12 @@ def test():
         canOpen = 0
 
     if canOpen == 1 & ML == 1:
+        # test if left door can be opened
         if (LI == 1 & CL == 0) | LD == 1 | LD == 1:
             lOpen = 1
         else:
             lOpen = 0
-        
+        # test if right door can be opened
         if (R1 == 1 & CL == 0) | RD == 1 | RD == 1:
             rOpen = 1
         else:
@@ -74,7 +75,7 @@ def defaultFunction():
         #csv_data = csv.reader(data)
         for row in data:
             print(row)
-            print("Reading Record", row[0])
+            print("Reading Record", row[0t])
             print("Left dashboard switch (0 or 1): ", row[1])
             print("Right dashboard switch (0 or 1): ", row[2])
             print("Child lock switch (0 or 1): ", row[3])
