@@ -77,23 +77,23 @@ def defaultFunction():
             templines = lines.split()
             for logs in templines:
                     temp.append(logs.decode("utf-8"))
-            print(temp)
+            #print(temp)
 
             
 
         #csv_data = csv.reader(data)
-        for row in temp:
-            print(row)
-            print("Reading Record", row[0])
-            print("Left dashboard switch (0 or 1): ", row[1])
-            print("Right dashboard switch (0 or 1): ", row[2])
-            print("Child lock switch (0 or 1): ", row[3])
-            print("Master unlock switch (0 or 1): ", row[4])
-            print("Left inside handle (0 or 1): ", row[5])
-            print("Left outside handle (0 or 1): ", row[6])
-            print("Right inside handle (0 or 1): ", row[7])
-            print("Right outside handle (0 or 1): ", row[8])
-            print("Gear shift position (P,N,D,1,2,3, or R)", row[9])
+            #for row in temp:
+            print(temp)
+            print("Reading Record", temp[0])
+            print("Left dashboard switch (0 or 1): ", temp[1])
+            print("Right dashboard switch (0 or 1): ", temp[2])
+            print("Child lock switch (0 or 1): ", temp[3])
+            print("Master unlock switch (0 or 1): ", temp[4])
+            print("Left inside handle (0 or 1): ", temp[5])
+            print("Left outside handle (0 or 1): ", temp[6])
+            print("Right inside handle (0 or 1): ", temp[7])
+            print("Right outside handle (0 or 1): ", temp[8])
+            print("Gear shift position (P,N,D,1,2,3, or R)", temp[9])
 
         print(test())
             
