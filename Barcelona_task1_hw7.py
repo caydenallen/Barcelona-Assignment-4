@@ -22,7 +22,7 @@ def test(i):
     gsPark = 0
     pattern = [' P', ' N', ' D', ' 1', ' 2', ' 3', ' R']
     #determin gear shift
-    #print(i) 
+     
     LD = (str(i[1]))
     RD = (str(i[2]))
     CL = (str(i[3]))
@@ -33,12 +33,6 @@ def test(i):
     RO = (str(i[8]))
     GS = (str(i[9]))
   
-    #print(ML, type(ML))
-    #print(RI, type(RI))
-
-
-
-  #  temp[9] == "p"
     
 
     if GS == " P":
@@ -95,19 +89,10 @@ def defaultFunction():
 
         for lines in data:
             lines = lines[:-1]
-                    #logs = logs[:-1]
             temp.append(lines.decode("utf-8").split(','))
         del temp[0]            
-            #print(temp)
             
-            #print(templines)
 
-        #csv_data = csv.reader(data)
-            #for row in temp:i
-           # print(temp)
-            #print(temp) 
-
-            #if temp[0] != "H1,":
         for i in temp:            
             count = count + 1
             print("Reading Record", count)
