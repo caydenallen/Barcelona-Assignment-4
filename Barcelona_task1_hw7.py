@@ -12,7 +12,7 @@ import csv
 
 
 
-def test():
+def test(temp):
     """"
     test
     """
@@ -22,6 +22,19 @@ def test():
     gsPark = 0
     pattern = re.compile("/[PpNnDd123rR]/g")
     #determin gear shift
+    
+    #LD = (str(temp[1])
+    #RD = temp[2]
+    #CL = (temp[3])
+    #ML = (str(temp[4])
+    #LI = (str(temp[5])
+    #LO = (str(temp[6])
+    #RI = (str(temp[7])
+    #RO = (str(temp[8])
+    GS = (str(temp[9])
+   
+  #  temp[9] == "p"
+
     if GS == "p" | GS == "P":
         gsPark = 1
         canOpen = 1
@@ -39,7 +52,7 @@ def test():
         else:
             lOpen = 0
         # test if right door can be opened
-        if (R1 == 1 & CL == 0) | RD == 1 | RD == 1:
+        if (RI == 1 & CL == 0) | RD == 1 | RD == 1:
             rOpen = 1
         else:
             rOpen = 0
@@ -71,31 +84,37 @@ def defaultFunction():
     """
     Help Comment
     """
+    count = 0
     with urlopen("http://icarus.cs.weber.edu/~hvalle/cs3030/data/minivanTest.csv") as data:
         for lines in data:
             temp = []
             templines = lines.split()
             for logs in templines:
                     temp.append(logs.decode("utf-8"))
+            templines = lines.split()
             #print(temp)
-
+            
             
 
         #csv_data = csv.reader(data)
             #for row in temp:
-            print(temp)
-            print("Reading Record", temp[0])
-            print("Left dashboard switch (0 or 1): ", temp[1])
-            print("Right dashboard switch (0 or 1): ", temp[2])
-            print("Child lock switch (0 or 1): ", temp[3])
-            print("Master unlock switch (0 or 1): ", temp[4])
-            print("Left inside handle (0 or 1): ", temp[5])
-            print("Left outside handle (0 or 1): ", temp[6])
-            print("Right inside handle (0 or 1): ", temp[7])
-            print("Right outside handle (0 or 1): ", temp[8])
-            print("Gear shift position (P,N,D,1,2,3, or R)", temp[9])
-
-        print(test())
+           # print(temp)
+           
+            if temp[0] != "H1,":
+                count = count + 1
+                print("Reading Record", count)
+                print("Left dashboard switch (0 or 1): ", temp[1].strip(','))
+                print("Right dashboard switch (0 or 1): ", temp[2].strip(','))
+                print("Child lock switch (0 or 1): ", temp[3].strip(','))
+                print("Master unlock switch (0 or 1): ", temp[4].strip(','))
+                print("Left inside handle (0 or 1): ", temp[5].strip(','))
+                print("Left outside handle (0 or 1): ", temp[6].strip(','))
+                print("Right inside handle (0 or 1): ", temp[7].strip(','))
+                print("Right outside handle (0 or 1): ", temp[8].strip(','))
+                print("Gear shift position (P,N,D,1,2,3, or R)", temp[9].strip(','))
+       
+       
+    print(test(temp))
             
 
 #Main Function
