@@ -14,7 +14,7 @@ import csv
 
 def test(i):
     """"
-    test
+    Determines whether or not the doors open
     """
     canOpen = 0
     rOpen = 0
@@ -81,7 +81,8 @@ def test(i):
 
 def defaultFunction():
     """
-    Help Comment
+    Pulls file from URL and decodes file
+    Prints out whether or not each lock is on or off and whether the door will open or not
     """
     count = 0
     with urlopen("http://icarus.cs.weber.edu/~hvalle/cs3030/data/minivanTest.csv") as data:
@@ -96,7 +97,7 @@ def defaultFunction():
         for i in temp:            
             count = count + 1
             print("Reading Record", count)
-            print("Left dashboard switch (0 or 1): ", i[1])
+            print("Left dashboard switch (0 or 1): ", i[1]):
             print("Right dashboard switch (0 or 1): ", i[2])
             print("Child lock switch (0 or 1): ", i[3])
             print("Master unlock switch (0 or 1): ", i[4])
