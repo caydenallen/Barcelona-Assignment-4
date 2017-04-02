@@ -97,7 +97,7 @@ def defaultFunction():
         for i in temp:            
             count = count + 1
             print("Reading Record", count)
-            print("Left dashboard switch (0 or 1): ", i[1]):
+            print("Left dashboard switch (0 or 1): ", i[1])
             print("Right dashboard switch (0 or 1): ", i[2])
             print("Child lock switch (0 or 1): ", i[3])
             print("Master unlock switch (0 or 1): ", i[4])

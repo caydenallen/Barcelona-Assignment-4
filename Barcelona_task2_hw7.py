@@ -20,12 +20,11 @@ def usage():
 
 def printBarCode(z):
     """
-    Takes in an Array of Zipcode and Prints the Barcode
+    Validates the input and aprses the numbers
     """
     zipCode = []
     for i in range(5):
         zipCode.append(z[i])
-    r = "|"
     s = 0
     for i in zipCode:
         s += int(i)
@@ -34,8 +33,15 @@ def printBarCode(z):
         s = s + 1
         checkDigit = checkDigit + 1
     zipCode.append(str(checkDigit))
+    
+    printDigit(zipCode)
 
-    for i in zipCode :
+def printDigit(z):
+    """
+    Prints the zipcode as barcode
+    """
+    r = "|"
+    for i in z :
         if (i == "1") :  r += ":::||"
         elif(i == "2") : r += "::|:|"
         elif(i == "3") : r += "::||:"
@@ -48,18 +54,6 @@ def printBarCode(z):
         elif(i == "0") : r += "||:::"
     r += "|"
     print(r)
-
-def printDigit(z):
-    """
-    Takes in a Zipcode and prints the Digit based on the weight 7, 4, 2, 1, 0
-    """
-    Digit = 0
-    Digit += z[0] * 7
-    Digit += z[1] * 4
-    Digit += z[2] * 2
-    Digit += z[3] * 1
-    Digit += z[4] * 0
-    print(Digit)
 
 
 def testModule():
@@ -85,9 +79,9 @@ def main(argv):
         usage()
     again = "y"
     while(again == "y"):
-        zipCode = input("Enter a Zipcode (xxxxx) q to quit:")
+        zipCode = input("Enter a Zipcode (xxxxx) q to quit: ")
         if (zipCode == "q"):
-            exit(0)
+            break
         zipCode = zipCode.rstrip()
         try:
             z = int(zipCode)
@@ -99,8 +93,8 @@ def main(argv):
             else:
                 printBarCode(zipCode)        
 
-        again = input("Enter another Zipcode? (y/n)")
-    
+        
+    print("Test Module off Online file:") 
     testModule()
 
 if __name__ == "__main__":
